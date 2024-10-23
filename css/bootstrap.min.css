@@ -406,9 +406,10 @@ progress {
   font-weight: 300;
 }
 .display-1 {
-  font-size: calc(1.625rem + 4.5vw);
+  font-size: calc(1.625rem + 1.5vw);
   font-weight: 700;
   line-height: 1.2;
+  text-transform: capitalize;
 }
 @media (min-width: 1200px) {
   .display-1 {

@@ -130,3 +130,28 @@ function setLanguageBasedOnCountry() {
 }
 
 window.onload = setLanguageBasedOnCountry;
+
+// procitaj vise
+document.addEventListener('DOMContentLoaded', function () {
+  var readMoreButtons = document.querySelectorAll('.read-more');
+  var closeButtons = document.querySelectorAll('.close-description');
+
+  // Show long description when 'Read More' is clicked
+  readMoreButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var product = this.closest('.product-item');
+      var longDescriptionOverlay = product.querySelector(
+        '.long-description-overlay'
+      );
+      longDescriptionOverlay.classList.remove('d-none');
+    });
+  });
+
+  // Hide long description when 'Close' is clicked
+  closeButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var longDescriptionOverlay = this.closest('.long-description-overlay');
+      longDescriptionOverlay.classList.add('d-none');
+    });
+  });
+});

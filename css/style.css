@@ -26,6 +26,119 @@ h1.plus::after {
   font-size: inherit; /* Zadrži istu veličinu fonta */
   margin-left: 2px; /* Doda malo razmaka između broja i plusa */
 }
+/************** procitaj vise *****************/
+.product-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items to the top */
+  height: 100%;
+  position: relative;
+}
+
+.text-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding-bottom: 20px; /* Osigurava prostor ispod za gumb */
+  position: relative;
+  text-align: center;
+}
+.text-center-copyright {
+  text-align: center;
+}
+.d-inline-block {
+  display: inline-block; /* Održava inline-block ponašanje */
+  align-self: flex-start; /* Osigurava da se element ne proteže unutar flex kontejnera */
+  margin: 0 auto; /* Ako želite centriranje unutar flexboxa */
+}
+
+.product-description {
+  min-height: 120px; /* Dodaj minimalnu visinu za konzistentnost visine opisa */
+  text-align: center;
+  margin-bottom: 20px; /* Dodaje razmak između teksta i gumba */
+}
+
+.read-more {
+  display: block;
+  text-align: center;
+  margin-top: 20px; /* Razmak između opisa i gumba */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px;
+  border-color: white;
+  color: white;
+  border-radius: 5px;
+
+  cursor: pointer;
+  width: fit-content;
+}
+.h3-procitaj-vise {
+  color: white;
+}
+.long-description-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85); /* Transparent dark overlay */
+  color: white;
+  z-index: 999; /* Ensure it's on top of everything */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-content {
+  max-width: 90%;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.long-description-overlay.d-none {
+  display: none;
+}
+/* skroll */
+.long-description-overlay .overlay-content {
+  max-height: 520px; /* Maksimalna visina za prikaz dugog sadržaja */
+  overflow-y: auto; /* Omogućava scroll unutar dugog opisa */
+}
+
+.long-description-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.85); /* Tamna pozadina */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.overlay-content {
+  max-width: 90%;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .product-description {
+    min-height: unset; /* Omogućava promjenu visine opisa na manjim uređajima */
+    text-align: center;
+  }
+
+  .read-more {
+    margin-top: 20px; /* Osigurava razmak ispod opisa na manjim uređajima */
+  }
+}
+
+/* procitaj vise kraj */
 
 h4,
 h5,
